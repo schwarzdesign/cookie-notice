@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Notice</title>
+</head>
+<body>
+    <div id="cookie-notice-mount"></div>
+    <script src="CookieNotice.js"></script>
+    <script>
+        var mount = document.getElementById('cookie-notice-mount');
+        var notice = new CookieNotice();
+        notice.mountNoticeIfNotAccepted(mount);
+        notice.acceptAndCloseOnButtonClick();
+    </script>
+</body>
+</html>
