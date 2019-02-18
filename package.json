@@ -2,7 +2,7 @@
     "name": "cookie-notice",
     "version": "1.0.0",
     "description": "Custom cookie notice banner by schwarzdesign.",
-    "main": "src/index.js",
+    "main": "src/CookieNotice.js",
     "private": true,
     "scripts": {
         "start": "webpack --mode development --watch --devtool='eval-source-map'",
