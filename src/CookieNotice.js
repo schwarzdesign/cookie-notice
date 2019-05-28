@@ -71,7 +71,7 @@ class CookieNotice {
      * Check whether the flag for accepted cookies is set in the localStorage.
      */
     isRejected() {
-        return localStorage.getItem(this.config.storageRejectKey === this.config.trueValue);
+        return localStorage.getItem(this.config.storageRejectKey) === this.config.trueValue;
     }
 
     /* HTML ELEMENT */
@@ -138,7 +138,7 @@ class CookieNotice {
      * appended to.
      */
     mountNoticeIfNotAccepted (mount) {
-        if (!this.isAccepted() || this.isRejected()) {
+        if (!this.isAccepted() && !this.isRejected()) {
             this.mountNotice(mount);
         }
     }
