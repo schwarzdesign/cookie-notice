@@ -149,14 +149,20 @@ class CookieNotice {
      * register your own event handlers for the click instead of using this.
      */
     acceptOrRejectAndCloseOnButtonClick () {
-        this.getNotice().querySelector(`#${this.config.buttonId}`).addEventListener('click', e => {
-            this.acceptCookies();
-            this.hide();
-        });
-        this.getNotice().querySelector(`#${this.config.buttonRejectId}`).addEventListener('click', e => {
-            this.rejectCookies();
-            this.hide();
-        });
+        const acceptButton = this.getNotice().querySelector(`#${this.config.buttonId}`);
+        const rejectButton = this.getNotice().querySelector(`#${this.config.buttonRejectId}`);
+        if (acceptButton) {
+            acceptButton.addEventListener('click', e => {
+                this.acceptCookies();
+                this.hide();
+            });
+        }
+        if (rejectButton) {
+            rejectButton.addEventListener('click', e => {
+                this.rejectCookies();
+                this.hide();
+            });
+        }
     }
 
 }
